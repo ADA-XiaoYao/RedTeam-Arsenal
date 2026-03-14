@@ -1,0 +1,32 @@
+name: CrackMapExec
+category: Lateral Movement
+description: A swiss army knife for pentesting networks.
+version: v6.1.1
+url: https://github.com/Porchetta-Industries/CrackMapExec
+install_command:
+  linux: "pip3 install crackmapexec"
+  macos: "pip3 install crackmapexec"
+  windows: "pip3 install crackmapexec"
+usage: "cme smb target_ip -u user -p pass"
+---
+name: Responder
+category: Lateral Movement
+description: A LLMNR, NBT-NS and MDNS poisoner, with built-in HTTP/SMB/MSSQL/FTP/LDAP rogue authentication server.
+version: v3.1.4
+url: https://github.com/lgandx/Responder
+install_command:
+  linux: "sudo apt install responder"
+  macos: "brew install responder"
+  windows: "N/A (Linux/macOS only)"
+usage: "responder -I eth0"
+---
+name: Rclone
+category: Exfiltration
+description: Rclone is a command-line program to manage files on cloud storage.
+version: v1.65.0
+url: https://rclone.org/
+install_command:
+  linux: "sudo apt install rclone"
+  macos: "brew install rclone"
+  windows: "choco install rclone"
+usage: "rclone copy local_file remote:bucket"

@@ -1,0 +1,21 @@
+name: Veil
+category: Evasion
+description: Veil is a tool designed to generate metasploit payloads that bypass common anti-virus solutions.
+version: v3.1.14
+url: https://github.com/Veil-Framework/Veil
+install_command:
+  linux: "sudo apt install veil"
+  macos: "N/A (Linux only)"
+  windows: "N/A (Linux only)"
+usage: "veil"
+---
+name: SharPersist
+category: Persistence
+description: Windows persistence toolkit written in C#.
+version: v1.0.0
+url: https://github.com/mandiant/SharPersist
+install_command:
+  linux: "N/A (Windows only)"
+  macos: "N/A (Windows only)"
+  windows: "git clone https://github.com/mandiant/SharPersist.git && cd SharPersist && msbuild SharPersist.sln"
+usage: "SharPersist.exe -t service -c 'C:\Windows\System32\cmd.exe' -n 'MyService'"

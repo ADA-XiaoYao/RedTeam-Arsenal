@@ -1,0 +1,10 @@
+name: Ghostwriter
+category: Reporting
+description: Ghostwriter is a collaborative reporting and project management platform.
+version: v3.1.2
+url: https://github.com/GhostwriterTeam/Ghostwriter
+install_command:
+  linux: "git clone https://github.com/GhostwriterTeam/Ghostwriter.git && cd Ghostwriter && docker-compose up -d"
+  macos: "N/A (Docker required)"
+  windows: "N/A (Docker required)"
+usage: "Access via browser: http://localhost:8000"

@@ -1,0 +1,21 @@
+name: Sliver
+category: C2
+description: Sliver is a general-purpose cross-platform adversary emulation framework.
+version: v1.5.42
+url: https://github.com/BishopFox/sliver
+install_command:
+  linux: "curl https://sliver.sh/install | sudo bash"
+  macos: "brew install sliver"
+  windows: "choco install sliver"
+usage: "sliver-server"
+---
+name: Havoc
+category: C2
+description: Havoc is a modern and malleable post-exploitation command and control framework.
+version: v0.7.0
+url: https://github.com/HavocFramework/Havoc
+install_command:
+  linux: "git clone https://github.com/HavocFramework/Havoc.git && cd Havoc && ./install.sh"
+  macos: "brew install havoc-c2"
+  windows: "N/A (Linux/macOS only)"
+usage: "./havoc server --profile profiles/havoc.yaML"
