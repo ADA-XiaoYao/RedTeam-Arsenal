@@ -1,0 +1,10 @@
+name: Subfinder
+category: Reconnaissance
+description: Subdomain discovery tool that discovers valid subdomains for websites by using passive online sources.
+version: v2.6.5
+url: https://github.com/projectdiscovery/subfinder
+install_command:
+  linux: "GO111MODULE=on go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest"
+  macos: "brew install subfinder"
+  windows: "scoop install subfinder"
+usage: "subfinder -d example.com"

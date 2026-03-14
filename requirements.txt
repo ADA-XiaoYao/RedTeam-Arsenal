@@ -1,0 +1,8 @@
+click
+requests
+rich
+PyYAML
+colorama
+flask
+flask-cors
+pyinstaller
