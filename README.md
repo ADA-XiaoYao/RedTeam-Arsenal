@@ -52,8 +52,27 @@ Developed for **ADA-XiaoYao**, this arsenal aims to be a "phenomenal" single-com
 ```bash
 git clone https://github.com/ADA-XiaoYao/RedTeam-Arsenal.git
 cd RedTeam-Arsenal
-pip install -r requirements.txt
+./setup.sh
 python arsenal.py --help
+```
+
+### Bulk Installation
+
+To install all tools defined in the arsenal, run:
+
+```bash
+python install_all.py
+```
+
+### Docker Support
+
+To build and run the arsenal within a Docker container:
+
+```bash
+docker build -t redteam-arsenal .
+docker run -it redteam-arsenal
+# For GUI:
+docker run -it -p 5000:5000 redteam-arsenal python arsenal.py gui
 ```
 
 ---
@@ -63,7 +82,7 @@ python arsenal.py --help
 ### CLI Mode
 ```bash
 python arsenal.py list-tools
-python arsenal.py install <tool_name>
+python arsenal.py install <category> <tool_name>
 ```
 
 ### GUI Mode

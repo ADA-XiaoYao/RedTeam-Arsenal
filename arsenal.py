@@ -37,7 +37,7 @@ def list_tools():
 def install(category, tool_name):
     """Install a specific tool. Example: install recon subfinder"""
     installer = ToolInstaller()
-    installer.install(category, tool_name)
+    installer.install(category, tool_name.lower().replace(" ", "_"))
 
 @cli.command()
 def gui():
