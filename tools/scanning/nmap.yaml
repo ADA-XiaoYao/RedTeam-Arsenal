@@ -1,0 +1,21 @@
+name: Nmap
+category: Scanning
+description: Network mapper for network discovery and security auditing.
+version: v7.94
+url: https://nmap.org/
+install_command:
+  linux: "sudo apt-get install nmap -y"
+  macos: "brew install nmap"
+  windows: "choco install nmap"
+usage: "nmap -sV -A target_ip"
+---
+name: Nuclei
+category: Scanning
+description: Fast and customizable vulnerability scanner based on simple YAML templates.
+version: v3.1.8
+url: https://github.com/projectdiscovery/nuclei
+install_command:
+  linux: "GO111MODULE=on go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest"
+  macos: "brew install nuclei"
+  windows: "scoop install nuclei"
+usage: "nuclei -u https://example.com"

@@ -1,44 +1,50 @@
 import click
 import os
 import sys
+from core.loader import ToolLoader
+from core.installer import ToolInstaller
+from rich.console import Console
+from rich.table import Table
+
+console = Console()
 
 @click.group()
 def cli():
-    """RedTeam-Arsenal: The Ultimate APT & Red Team Toolkit for Single Combat."""
+    """⚔️ RedTeam-Arsenal: The Ultimate APT & Red Team Toolkit for Single Combat."""
     pass
 
 @cli.command()
 def list_tools():
     """List all available tools in the arsenal."""
-    tools = {
-        "Reconnaissance": ["Subfinder", "Amass", "Assetfinder"],
-        "Scanning": ["Nmap", "Nuclei", "Nikto"],
-        "Exploitation": ["Metasploit", "SQLMap", "BeEF"],
-        "C2 Frameworks": ["Sliver", "Havoc", "Mythic"],
-        "Post-Exploitation": ["Mimikatz", "BloodHound", "Impacket"],
-        "Evasion": ["Veil", "SharPersist"],
-        "Persistence": ["SharPersist", "AnyDesk-Backdoor"],
-        "Lateral Movement": ["CrackMapExec", "Responder"],
-        "Exfiltration": ["Rclone", "DNScat2"],
-        "Reporting": ["Ghostwriter"]
-    }
+    loader = ToolLoader()
+    tools = loader.get_all_tools()
+    
+    table = Table(title="RedTeam-Arsenal Tool Catalog", show_header=True, header_style="bold magenta")
+    table.add_column("Category", style="cyan", width=20)
+    table.add_column("Tool Name", style="green")
+    table.add_column("Version", style="yellow")
+    table.add_column("Description", style="white")
+
     for category, tool_list in tools.items():
-        click.echo(click.style(f"[{category}]", fg='cyan', bold=True))
         for tool in tool_list:
-            click.echo(f"  - {tool}")
+            table.add_row(category, tool['name'], tool.get('version', 'N/A'), tool.get('description', 'No description.'))
+    
+    console.print(table)
 
 @cli.command()
+@click.argument('category')
 @click.argument('tool_name')
-def install(tool_name):
-    """Install a specific tool (Placeholder)."""
-    click.echo(f"Installing {tool_name}...")
-    # Logic to handle tool-specific installation scripts will go here
-    click.echo(f"{tool_name} installed successfully.")
+def install(category, tool_name):
+    """Install a specific tool. Example: install recon subfinder"""
+    installer = ToolInstaller()
+    installer.install(category, tool_name)
 
 @cli.command()
 def gui():
     """Launch the RedTeam-Arsenal GUI."""
-    click.echo("Launching RedTeam-Arsenal GUI (Not implemented yet)...")
+    console.print("[bold blue]Launching RedTeam-Arsenal GUI...[/bold blue]")
+    os.chdir("gui")
+    os.system("python3 app.py")
 
 if __name__ == '__main__':
     cli()
