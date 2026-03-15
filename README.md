@@ -6,7 +6,7 @@
 
 **RedTeam-Arsenal** is a world-class, all-in-one toolkit designed for top-tier Red Teamers and APT actors. It covers the entire attack lifecycle, from reconnaissance to reporting, supporting both CLI and GUI interfaces across Windows, macOS, and Linux.
 
-Developed for **ADA-XiaoYao**, this arsenal aims to be a "phenomenal" single-combat weapon for professional offensive security operations.
+Developed for **Alfanet XiaoYao**, this arsenal aims to be a "phenomenal" single-combat weapon for professional offensive security operations.
 
 ---
 
